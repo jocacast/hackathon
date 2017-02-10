@@ -1,0 +1,29 @@
+[
+	{
+		"employeeID":8,
+		"birthDate":"1975-01-07",
+		"firstName":"Peter",
+		"lastName":"Ondrejka",
+		"gender":"M",
+		"hiredate":"1997-12-20",
+		"created":"2016-03-15"
+	},
+	{
+		"employeeID":5,
+		"birthDate":"1980-06-21",
+		"firstName":"Elaine",
+		"lastName":"Wood",
+		"gender":"F",
+		"hiredate":"1997-12-31",
+		"created":"2016-03-14"
+	},
+	{
+		"employeeID":6,
+		"birthDate":"1978-06-21",
+		"firstName":"Henry",
+		"lastName":"Ford",
+		"gender":"F",
+		"hiredate":"1997-12-31",
+		"created":"2016-03-14"
+	}
+]

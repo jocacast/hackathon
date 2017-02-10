@@ -1,0 +1,88 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div style="display:none" id="new-employee-dialog"
+     title="Add New Employee" 
+     data-bind="ojComponent:{component: 'ojDialog',
+                             initialVisibility: 'hide',
+                             rootAttributes: {style: 'width: 500px;'}}">  <div class="oj-dialog-body">
+        <div id="form-container" class="oj-form-layout">
+            <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4
+                 oj-md-labels-inline"
+                 data-bind="with: employeeRecord">  
+                <div class="oj-flex">  
+                    <div class="oj-flex-item">
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="first-name" 
+                               data-bind="ojComponent: {component: 'ojInputText', 
+                                            value: firstName,
+                                            required: true}">
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="last-name" 
+                               data-bind="ojComponent: {component: 'ojInputText', 
+                                            value: lastName,
+                                            required: true}">
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="gender" 
+                               data-bind="ojComponent: {component: 'ojInputText', 
+                                            value: gender,
+                                            required: true}">
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="birthdate">Birth Date</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="birthdate"
+                               placeholder="Date in YYYY-MM-DD format"
+                               data-bind="ojComponent: {component: 'ojInputText',
+                                            value: birthDate,
+                                            required: true}">
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="hiredate">Hire Date</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="hiredate" placeholder="Date in YYYY-MM-DD format"
+                               data-bind="ojComponent: {component: 'ojInputText',
+                                            value: hiredate,
+                                            required: true}">
+                    </div>
+                </div>
+            </div>    
+        </div>    
+    </div>
+    <div class="oj-dialog-footer">
+        <button id="submit-button"
+                data-bind="click: function (data, event) {
+                                    submitEmployee(data, event, $parent);},
+                       ojComponent: {component: 'ojButton',
+                                    label: 'Submit'}">
+        </button>
+        <button id="cancel-button"
+                data-bind="click: cancelEmployee,
+                       ojComponent: {component: 'ojButton',
+                                     label: 'Cancel'}">
+        </button>
+    </div>
+</div>

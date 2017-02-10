@@ -1,0 +1,26 @@
+[
+    {
+        "contactID": 1,
+        "serviceId": 1,
+        "name": "Alejandro Becerra",
+        "telephone": 1234,
+        "email": "alejandro@gmail.com",
+        "facebookPage": "alejandro@facebook.com"
+    },
+    {
+        "contactID": 2,
+        "serviceId": 2,
+        "name": "Juan Carlos Onofre",
+        "telephone": 5678,
+        "email": "juan@gmail.com",
+        "facebookPage": "juan@facebook.com"
+    },
+    {
+        "contactID": 3,
+        "serviceId": 3,
+        "name": "Jorge Castillo",
+        "telephone": 9101,
+        "email": "jorge@gmail.com",
+        "facebookPage": "jorge@facebook.com"
+    }
+]
