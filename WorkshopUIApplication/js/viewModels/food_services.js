@@ -7,13 +7,66 @@
 /**
  * food_services module
  */
-define(['ojs/ojcore', 'knockout'
-], function (oj, ko) {
+define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledatasource', 'ojs/ojmodel'
+], 
+ function(oj, ko, $) {
     /**
      * The view model for the main content view template
      */
     function food_servicesContentViewModel() {
-        var self = this;
+              var self = this;
+              var self = this;
+                var parse = function (response) {
+            var returnResponse = {};
+            if (response.status) {
+                //This comes from submit                
+                if (response.status === 'Success') {
+                    if (response.name) {
+                        returnResponse.contactID = response.contactID;
+                    }
+                    if (response.created) {
+                        returnResponse.contactID = response.contactID;
+                    }
+                }
+            } else {
+                //This comes from query
+                returnResponse = response;
+            }
+            return returnResponse;
+        };
+        
+        
+        var url = 'food_services.json';
+        var model = oj.Model.extend({
+            idAttribute: 'contactID',
+            urlRoot: url,
+            parse: parse
+        });
+
+        self.collection = new oj.Collection(null, {
+            url: url,
+            model: model
+        });
+
+        self.newContact = function (data, event) {
+            console.log(data);
+            console.log(event);
+            $('#new-contact-dialog').ojDialog('open');
+        };
+        self.viewComments = function(data, event) {
+            console.log(data);
+            console.log(event);
+            $('#view-comments-dialog').ojDialog('open');
+        };
+        
+        self.addComment = function(data, event) {
+            console.log(data);
+            console.log(event);
+            $('#add-comment-dialog').ojDialog('open');
+        };        
+
+
+        self.dataSource = new oj.CollectionTableDataSource(self.collection);
     }
     
     return food_servicesContentViewModel;

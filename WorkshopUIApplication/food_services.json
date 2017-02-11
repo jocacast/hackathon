@@ -1,0 +1,33 @@
+[
+    {
+        "contactID": 1,
+        "serviceId": 1,
+        "name": "Ramsay Gordon",
+        "telephone": 442080699,
+        "email": "g_ramsay@gmail.com",
+        "facebookPage": "www.facebook.com/g_ramsay",
+        "score": 8 ,
+        "service": "Chief"
+    },
+    {
+        "contactID": 2,
+        "serviceId": 2,
+        "name": "La Lupita mexican food",
+        "telephone": 442223795,
+        "email": "contact@la_lupita.com",
+        "facebookPage": "www.facebook.com/la_lupita",
+        "score": 10,
+        "service": "Restaurant"
+        
+    },
+    {
+        "contactID": 3,
+        "serviceId": 3,
+        "name": "Fast Sushi",
+        "telephone": 4421189932,
+        "email": "contact@fast_sushi.com",
+        "facebookPage": "www.facebook.com/fast_sushi",
+        "score": 8,
+        "service": "Fast food"
+    }
+]

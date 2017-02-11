@@ -22,7 +22,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
        self.router.configure({
          'contacts':{label: 'Home Services', isDefault: true},
          'health': {label: 'Health Services'},
-         'food': {label: 'Food Services'},
+         'food_services': {label: 'Food Services'},
          'technology': {label: 'Tecnology Support Services'}
          
          
@@ -35,7 +35,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
       iconClass: 'demo-grid-icon-16 demo-icon-font-24 oj-navigationlist-item-icon'},
       {name: 'Health Services', id: 'health',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'},
-      {name: 'Food Services', id: 'food',
+      {name: 'Food Services', id: 'food_services',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'},
       {name: 'Tecnology Support Services', id: 'technology',
        iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'}
