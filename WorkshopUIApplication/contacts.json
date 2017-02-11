@@ -5,7 +5,9 @@
         "name": "Alejandro Becerra",
         "telephone": 1234,
         "email": "alejandro@gmail.com",
-        "facebookPage": "alejandro@facebook.com"
+        "facebookPage": "alejandro@facebook.com",
+        "score": 6,
+        "service": "Ophthalmologist"
     },
     {
         "contactID": 2,
@@ -13,7 +15,10 @@
         "name": "Juan Carlos Onofre",
         "telephone": 5678,
         "email": "juan@gmail.com",
-        "facebookPage": "juan@facebook.com"
+        "facebookPage": "juan@facebook.com",
+        "score": 8,
+        "service": "Dentist"
+        
     },
     {
         "contactID": 3,
@@ -21,6 +26,8 @@
         "name": "Jorge Castillo",
         "telephone": 9101,
         "email": "jorge@gmail.com",
-        "facebookPage": "jorge@facebook.com"
+        "facebookPage": "jorge@facebook.com",
+        "score": 10,
+        "service": "Pediatrician"
     }
 ]

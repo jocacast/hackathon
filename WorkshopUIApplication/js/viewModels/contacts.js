@@ -15,8 +15,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledataso
 
     function contactsContentViewModel() {
         var self = this;
-                var parse = function (response) {
-            var returnResponse = {};
+        var parse = function (response) {
+        var returnResponse = {};
             if (response.status) {
                 //This comes from submit                
                 if (response.status === 'Success') {

@@ -1,0 +1,33 @@
+[
+    {
+        "contactID": 1,
+        "serviceId": 1,
+        "name": "Dr. Gregory House",
+        "telephone": 442080697,
+        "email": "g_house@gmail.com",
+        "facebookPage": "www.facebook.com/g_house",
+        "score": 8 ,
+        "service": "Oncologist"
+    },
+    {
+        "contactID": 2,
+        "serviceId": 2,
+        "name": "Dr. James Wilson",
+        "telephone": 442223775,
+        "email": "wilson_james@gmail.com",
+        "facebookPage": "www.facebook.com/wilson_james",
+        "score": 10,
+        "service": "Ophthalmologist"
+        
+    },
+    {
+        "contactID": 3,
+        "serviceId": 3,
+        "name": "Dr. Eric Foreman",
+        "telephone": 4421185932,
+        "email": "eric_foreman@gmail.com",
+        "facebookPage": "www.facebook.com/foreman_eric",
+        "score": 8,
+        "service": "Endocrinologist"
+    }
+]
