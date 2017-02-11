@@ -20,33 +20,26 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
        // Router setup
        self.router = oj.Router.rootInstance;
        self.router.configure({
-         'dashboard': {label: 'Home Services', isDefault: true},
-         'incidents': {label: 'Health Services'},
-         'customers': {label: 'Food Services'},
-         'about': {label: 'Tecnology Support Services'},
-         'myhello': {label: 'About'},
-         'basic': {label: 'Example'},
-         'contacts':{label: 'Contacts'}
+         'contacts':{label: 'Home Services', isDefault: true},
+         'health': {label: 'Health Services'},
+         'food': {label: 'Food Services'},
+         'technology': {label: 'Tecnology Support Services'}
+         
          
        });
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
       // Navigation setup
       var navData = [
-      {name: 'Home Services', id: 'dashboard',
-       iconClass: 'demo-grid-icon-16 demo-icon-font-24 oj-navigationlist-item-icon'},
-      {name: 'Health Services', id: 'incidents',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'},
-      {name: 'Food Services', id: 'customers',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'},
-      {name: 'Tecnology Support Services', id: 'about',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'},
-      {name: 'About', id: 'myhello',
-          iconClass: 'demo-grid-icon-16 demo-icon-font-24 oj-navigationlist-item-icon'},
-      {name: 'Example', id: 'basic',
+      {name: 'Home Services', id: 'contacts',
       iconClass: 'demo-grid-icon-16 demo-icon-font-24 oj-navigationlist-item-icon'},
-      {name: 'Contacts', id: 'contacts',
-      iconClass: 'demo-grid-icon-16 demo-icon-font-24 oj-navigationlist-item-icon'}
+      {name: 'Health Services', id: 'health',
+       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'},
+      {name: 'Food Services', id: 'food',
+       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'},
+      {name: 'Tecnology Support Services', id: 'technology',
+       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'}
+      
 
       ];
       self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
