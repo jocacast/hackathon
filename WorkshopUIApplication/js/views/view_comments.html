@@ -9,27 +9,43 @@ and open the template in the editor.
      title="Comments" 
      data-bind="ojComponent:{component: 'ojDialog',
                              initialVisibility: 'hide',
-                             rootAttributes: {style: 'width: 500px;'}}">  
+                             modality: 'modeless',
+                             rootAttributes: {style: 'width: 900px; height: 300px;'}}">  
     <div class="oj-dialog-body">
         <div id="form-container" class="oj-form-layout">
             <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4
-                 oj-md-labels-inline"> 
-
-
-
-
-                <div class="oj-flex">  
-                    <div class="oj-flex-item">
-                        <label for="name">Name</label>
+                 oj-md-labels-inline">         
+                    <div class="oj-flex-item">                
+                        <ul id="employees-listview" aria-label="list using collection"  
+                            data-bind="ojComponent: {component: 'ojListView',
+                                 data: dataSource,
+                                 item: {template: 'comments_template'},
+                                 selectionMode: 'single',
+                                 scrollPolicy: 'loadMoreOnScroll',
+                                 scrollPolicyOptions: {fetchSize: 15}}">
+                        </ul>
                     </div>
-                    <div class="oj-flex-item">
-                        <input id="name" 
-                               data-bind="ojComponent: {component: 'ojInputText', 
-                                            value: name,
-                                            required: true}">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/html" id="comments_template">
+  <li data-bind="attr: {id: 'comment-' + commentID}">
+    <div class="oj-flex">
+      <div class="oj-flex-item">
+        <div class="oj-flex">            
+          <div class="oj-flex-item">                
+            <strong data-bind="text: user">
+            </strong>                                    
+          </div>            
+        </div>
+        <div class="oj-flex">            
+          <div class="oj-flex-item">                
+            <span data-bind="text: comment"> </span>
+          </div>
+        </div>
+      </div>            
+    </div>
+  </li>
+</script>

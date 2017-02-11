@@ -10,70 +10,82 @@ and open the template in the editor.
                              initialVisibility: 'hide',
                              rootAttributes: {style: 'width: 500px;'}}">  
     <div class="oj-dialog-body">
-    <div id="form-container" class="oj-form-layout">
-      <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4
-                  oj-md-labels-inline"
-           data-bind="with: contactRecord"> 
-        <div class="oj-flex">  
-          <div class="oj-flex-item">
-            <label for="name">Name</label>
-          </div>
-          <div class="oj-flex-item">
-            <input id="name" 
-                   data-bind="ojComponent: {component: 'ojInputText', 
+        <div id="form-container" class="oj-form-layout">
+            <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4
+                 oj-md-labels-inline"
+                 data-bind="with: contactRecord"> 
+                <div class="oj-flex">  
+                    <div class="oj-flex-item">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="name" 
+                               data-bind="ojComponent: {component: 'ojInputText', 
                                             value: name,
                                             required: true}">
-          </div>
-        </div>
-        <div class="oj-flex"> 
-          <div class="oj-flex-item">
-            <label for="telephone">Telephone</label>
-          </div>
-          <div class="oj-flex-item">
-            <input id="telephone" 
-                   data-bind="ojComponent: {component: 'ojInputText', 
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="telephone">Telephone</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="telephone" 
+                               data-bind="ojComponent: {component: 'ojInputText', 
                                             value: telephone,
                                             required: true}">
-          </div>
-        </div>
-        <div class="oj-flex"> 
-          <div class="oj-flex-item">
-            <label for="email">Email</label>
-          </div>
-          <div class="oj-flex-item">
-            <input id="email"
-                   data-bind="ojComponent: {component: 'ojInputText',
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="email"
+                               data-bind="ojComponent: {component: 'ojInputText',
                                             value: email,
                                             required: true}">
-          </div>
-        </div>
-        <div class="oj-flex"> 
-          <div class="oj-flex-item">
-            <label for="facebookPage">Facebook page</label>
-          </div>
-          <div class="oj-flex-item">
-            <input id="facebookPage"
-                   data-bind="ojComponent: {component: 'ojInputText',
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="facebookPage">Facebook page</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="facebookPage"
+                               data-bind="ojComponent: {component: 'ojInputText',
                                             value: facebookPage,
                                             required: true}">
-          </div>
-        </div>
-      </div>    
-    </div>    
+                    </div>
+                </div>
+                <div class="oj-flex"> 
+                    <div class="oj-flex-item">
+                        <label for="service">Service</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="service"
+                               data-bind="ojComponent: {component: 'ojInputText',
+                                            value: service,
+                                            required: true}">
+                    </div>
+                </div>
+
+            </div>    
+        </div>    
     </div>
     <div class="oj-dialog-footer">
-    <button id="submit-button"
-            data-bind="click: function (data, event) {
+        <button id="submit-button"
+                data-bind="click: function (data, event) {
                         submitContact(data, event, $parent);},
                     ojComponent: {component: 'ojButton',
                                   label: 'Submit'}">
-        
-    </button>
-    <button id="cancel-button"
-            data-bind="click: cancelContact,
+
+        </button>
+        <button id="cancel-button"
+                data-bind="click: cancelContact,
                        ojComponent: {component: 'ojButton',
                                      label: 'Cancel'}">
-    </button>
+        </button>
     </div>
 </div>
 

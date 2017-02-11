@@ -1,0 +1,79 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div style="display:none" id="add-comment-dialog"
+     title="Add New Comment" 
+     data-bind="ojComponent:{component: 'ojDialog',
+                             initialVisibility: 'hide',
+                             rootAttributes: {style: 'width: 600px;'}}">  
+    <div class="oj-dialog-body">
+        <div id="form-container" class="oj-form-layout">
+            <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4
+                 oj-md-labels-inline"
+                 data-bind="with: commentRecord"> 
+                <div class="oj-flex">
+                    <div class="oj-lg-5 oj-md-5 oj-sm-12" style="">
+                        <div class="oj-flex-item">
+                            <label for="comment">jorge.c.castillo@oracle.com</label>
+                        </div>
+                    </div>
+                    <div class="oj-lg-7 oj-md-7 oj-sm-12" style="">
+                        <div class="oj-flex-item">
+                            <textarea id="name"
+                                      style =' width: 300px; height: 250px;'
+                                   data-bind="ojComponent: {component: 'ojInputText', 
+                                                value: comment,
+                                                required: true}"></textarea>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-lg-5 oj-md-5 oj-sm-12" style="">
+                        <div class="oj-flex-item">
+                        <label for="score">Service Score</label>
+                    </div>
+                    </div>
+                    
+                    <div class="oj-lg-7 oj-md-7 oj-sm-12" style="">
+                        <div class="oj-flex-item" data-bind="click:function(){console.log($data)}">
+                            <input id="slider-id"
+                                data-bind="ojComponent: {
+                                           component: 'ojSlider', 
+                                           max:$data.max,
+                                           min:$data.min, 
+                                           step:$data.step, 
+                                           value:$data.value,
+                                           rawValue:$data.rawValue
+                                           }"/>
+
+                         <br>
+                         <span id="rawValue" data-bind="text: $data.rawValue"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>    
+        </div>    
+    </div>
+    
+    
+    <div class="oj-dialog-footer">
+        <button id="submit-button"
+                data-bind="click: function (data, event) {
+                        submitComment(data, event, $parent);},
+                    ojComponent: {component: 'ojButton',
+                                  label: 'Submit'}">
+
+        </button>
+        <button id="cancel-button"
+                data-bind="click: cancelComment,
+                       ojComponent: {component: 'ojButton',
+                                     label: 'Cancel'}">
+        </button>
+    </div>
+</div>

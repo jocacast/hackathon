@@ -35,7 +35,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledataso
         };
         
         
-        var url = 'http://slc12mev.us.oracle.com:7003/MDCTipServicesHackaton/webresources/lookservices';
+        var url = 'http://slc12mev.us.oracle.com:7003/MDCTipServicesHackaton/webresources/wscontacts';
         var model = oj.Model.extend({
             idAttribute: 'contactID',
             urlRoot: url,
@@ -57,6 +57,12 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledataso
             console.log(event);
             $('#view-comments-dialog').ojDialog('open');
         };
+        
+        self.addComment = function(data, event) {
+            console.log(data);
+            console.log(event);
+            $('#add-comment-dialog').ojDialog('open');
+        };        
 
 
         self.dataSource = new oj.CollectionTableDataSource(self.collection);
