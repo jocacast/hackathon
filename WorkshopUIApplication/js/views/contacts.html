@@ -29,7 +29,11 @@
 </div>   
 
 <div class="oj-flex">            
-  <div class="oj-flex-item">                
+  <div class="oj-flex-item">
+    <input id="filterDepartId" maxlength='30' placeholder="Search by service" 
+        data-bind="event: {keyup: handleKeyUp}, 
+                    textInput: filter, 
+                    ojComponent:{component:'ojInputText'}"/>
     <ul id="employees-listview" aria-label="list using collection"  
         data-bind="ojComponent: {component: 'ojListView',
                                  data: dataSource,
@@ -46,34 +50,35 @@
 <div data-bind="ojModule: { name: 'add_comment'}"></div>
 
 <script type="text/html" id="employees_template">
-    <li data-bind="attr: {id: 'contact-' + contactID}">
+    <li data-bind="attr: {id: 'contact-' + $data.contactID}">
+        <!-- <div data-bind="click: function(){console.log($data)}">here</div> -->
         <div class="oj-flex">
             <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:144px;padding-bottom:5px">
-                <img data-bind="attr: {src: 'images/user_icon.png', alt: name}"></img>
+                <img data-bind="attr: {src: 'images/user_icon.png', alt: $parent.name}"></img>
             </div>
             <div class="oj-lg-8 oj-md-8 oj-sm-12">
                 <div class="oj-flex row">
                     <div class="oj-lg-12">
-                        <span class="header" data-bind="text: name"></span>
+                        <span class="header" data-bind="text: $data.name "></span>
                     </div>
                 </div>
                 <div class="oj-flex row">
                     <div class="oj-lg-4 oj-md-4 oj-sm-12">
-                        <span class="data"><b>Telephone: </b><span data-bind="text: telephone"></span></span>
+                        <span class="data"><b>Telephone: </b><span data-bind="text: $data.telephone"></span></span>
                     </div>
                     <div class="oj-lg-4 oj-md-4 oj-sm-12">
-                        <span class="data"><b>Email: </b><span data-bind="text: email"></span></span>
+                        <span class="data"><b>Email: </b><span data-bind="text: $data.email"></span></span>
                     </div>
                     <div class="oj-lg-4 oj-md-4 oj-sm-12">
-                        <span class="data"><b>Facebook: </b><span data-bind="text: facebookPage"></span></span>
+                        <span class="data"><b>Facebook: </b><span data-bind="text: $data.facebookPage"></span></span>
                     </div>
                 </div>
                 <div class="oj-flex">
                     <div class="oj-lg-4 oj-md-4 oj-sm-12">
-                        <span class="data"><b>Service: </b><span data-bind="text: service"></span></span>
+                        <span class="data"><b>Service: </b><span data-bind="text: $data.service"></span></span>
                     </div>
                     <div class="oj-lg-4 oj-md-4 oj-sm-12">
-                        <span class="data"><b>Score: </b><span data-bind="text: score"></span></span>
+                        <span class="data"><b>Score: </b><span data-bind="text: $data.score"></span></span>
                     </div>
                     <div class="oj-lg-4 oj-md-4 oj-sm-12">
                         <span class="data"><b> </b><span data-bind="text: ''"></span></span>
@@ -88,7 +93,7 @@
                 </div>
                 <div class="oj-flex row">
                     <div class="oj-flex-item">
-                        <button data-bind="attr: { id: 'add-comment-' + contactID },
+                        <button data-bind="attr: { id: 'add-comment-' + $parent.contactID },
                               click: $parent.addComment,
                               ojComponent: {
                                     component:'ojButton',
@@ -98,7 +103,7 @@
                 </div>
                 <div class="oj-flex row">
                     <div class="oj-flex-item">
-                        <button data-bind="attr: { id: 'view-comments-' + contactID },
+                        <button data-bind="attr: { id: 'view-comments-' + $parent.contactID },
                               click: $parent.viewComments,
                               ojComponent: {
                                     component:'ojButton',
