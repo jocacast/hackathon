@@ -23,15 +23,26 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojdialog', '
             value : ko.observable(10),
             rawValue: ko.observable()
         };
-        self.submitComment = function (data, event) {
+        self.submitComment = function (data, event, parentVM) {
             console.log(data);
             console.log(event);
+            parentVM.collection.create(data.commentRecord, {wait:true,
+        contentType: 'application/json',
+        success: function (model, response) {
+            $('#add-comment-dialog').ojDialog('close');
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Error in Create: ' + textStatus);                    
+        }
+    });                        
+
 
         };
 
         self.cancelComment = function (data, event) {
             console.log(data);
             console.log(event);
+            $('#add-comment-dialog').ojDialog('close');
         };
     }
     
