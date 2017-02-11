@@ -3,6 +3,24 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<style>
+.header
+{
+  font-size: 17px;
+  font-weight: bold;
+  color: #428bca;
+}
+
+.row
+{
+  padding-bottom: 5px;
+}
+
+.data
+{
+  color: #454545;
+}
+</style>
 
 <h1>Contacts</h1>
 
@@ -32,36 +50,75 @@ and open the template in the editor.
 </div>
 <div data-bind="ojModule: { name: 'new_contact_dialog'}"></div>
 <div data-bind="ojModule: { name: 'view_comments'}"></div>
-<script type="text/html" id="employees_template">
-  <li data-bind="attr: {id: 'contact-' + contactID}">
-    <div class="oj-flex">
-      <div class="oj-flex-item">
-        <div class="oj-flex">            
-          <div class="oj-flex-item">                
-            <strong data-bind="text: name">
-            </strong>                                    
-          </div>            
+<script type="text/html" id="employees_templates">
+    <li data-bind="attr: {id: 'contact-' + contactID}">
+        <div class="oj-flex">
+          <div class="oj-flex-item">
+            <div class="oj-flex">            
+              <div class="oj-flex-item">                
+                <strong data-bind="text: name">
+                </strong>                                    
+              </div>            
+            </div>
+            <div class="oj-flex">            
+              <div class="oj-flex-item">                
+                <span data-bind="text: 'Telephone Number: ' + telephone"> </span>
+              </div>
+              <div class="oj-flex-item">                
+                <span data-bind="text: 'Email: ' + email"> </span>
+              </div>
+              <div class="oj-flex-item">                
+                <span data-bind="text: 'Facebook page: ' + facebookPage"> </span>
+              </div>
+            </div> 
+          </div> 
+            <div class="oj-flex-item">
+                <button data-bind="attr: { id: 'view-comments-' + contactID },
+                          click: $parent.viewComments,
+                          ojComponent: {
+                                component:'ojButton',
+                                label: 'View  Comments'}">
+                </button>
+            </div>            
         </div>
-        <div class="oj-flex">            
-          <div class="oj-flex-item">                
-            <span data-bind="text: 'Telephone Number: ' + telephone"> </span>
-          </div>
-          <div class="oj-flex-item">                
-            <span data-bind="text: 'Email: ' + email"> </span>
-          </div>
-          <div class="oj-flex-item">                
-            <span data-bind="text: 'Facebook page: ' + facebookPage"> </span>
-          </div>
-        </div> 
-      </div> 
-        <div class="oj-flex-item">
-            <button data-bind="attr: { id: 'view-comments-' + contactID },
-                      click: $parent.viewComments,
-                      ojComponent: {
-                            component:'ojButton',
-                            label: 'View  Comments'}">
-            </button>
-        </div>            
-    </div>
-  </li>
+    </li>
+</script>
+
+<script type="text/html" id="employees_template">
+    <li data-bind="attr: {id: 'contact-' + contactID}">
+        <div class="oj-flex">
+            <div class="oj-lg-4 oj-md-4 oj-sm-12" style="max-width:144px;padding-bottom:5px">
+                <img data-bind="attr: {src: 'images/user_icon.png', alt: name}"></img>
+            </div>
+            <div class="oj-lg-8 oj-md-8 oj-sm-12">
+                <div class="oj-flex row">
+                    <div class="oj-lg-12">
+                        <span class="header" data-bind="text: name"></span>
+                    </div>
+                </div>
+                <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Telephone: </b><span data-bind="text: telephone"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Email: </b><span data-bind="text: email"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Facebook: </b><span data-bind="text: facebookPage"></span></span>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Service: </b><span data-bind="text: ''"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Score: </b><span data-bind="text: ''"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b> </b><span data-bind="text: ''"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
 </script>
