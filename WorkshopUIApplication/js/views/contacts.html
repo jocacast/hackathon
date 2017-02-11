@@ -9,59 +9,76 @@ and open the template in the editor.
 <div class="oj-flex">            
     <div class="oj-flex-item">  
         <button id= "button"
-            data-bind="click: newContact, 
+                data-bind="click: newContact, 
                        ojComponent: { component: 'ojButton', label: 'Add New' }">
         </button>
     </div>
 </div>   
 
 <div class="oj-flex">            
-  <div class="oj-flex-item">                
-    <ul id="employees-listview" aria-label="list using collection"  
-        data-bind="ojComponent: {component: 'ojListView',
+    <div class="oj-flex-item">                
+        <ul id="employees-listview" aria-label="list using collection"  
+            data-bind="ojComponent: {component: 'ojListView',
                                  data: dataSource,
                                  item: {template: 'employees_template'},
                                  selectionMode: 'single',
                                  scrollPolicy: 'loadMoreOnScroll',
                                  scrollPolicyOptions: {fetchSize: 15}}">
-    </ul>
-  </div>
-  <div class="oj-flex-item">                
+        </ul>
+    </div>
+    <div class="oj-flex-item">                
 
-  </div>
+    </div>
 </div>
 <div data-bind="ojModule: { name: 'new_contact_dialog'}"></div>
 <div data-bind="ojModule: { name: 'view_comments'}"></div>
+<div data-bind="ojModule: { name: 'add_comment'}"></div>
 <script type="text/html" id="employees_template">
-  <li data-bind="attr: {id: 'contact-' + contactID}">
-    <div class="oj-flex">
-      <div class="oj-flex-item">
-        <div class="oj-flex">            
-          <div class="oj-flex-item">                
-            <strong data-bind="text: name">
-            </strong>                                    
-          </div>            
-        </div>
-        <div class="oj-flex">            
-          <div class="oj-flex-item">                
-            <span data-bind="text: 'Telephone Number: ' + telephone"> </span>
-          </div>
-          <div class="oj-flex-item">                
-            <span data-bind="text: 'Email: ' + email"> </span>
-          </div>
-          <div class="oj-flex-item">                
-            <span data-bind="text: 'Facebook page: ' + facebookPage"> </span>
-          </div>
-        </div> 
-      </div> 
-        <div class="oj-flex-item">
-            <button data-bind="attr: { id: 'view-comments-' + contactID },
+    <li data-bind="attr: {id: 'contact-' + contactID}">
+        <div class="oj-flex">
+            <div class="oj-flex-item">
+                <div class="oj-flex">            
+                    <div class="oj-flex-item">                
+                        <strong data-bind="text: name">
+                        </strong>                                    
+                    </div> 
+                    <div class="oj-flex-item">                
+                        <strong data-bind="text: score">
+                        </strong>                                    
+                    </div>
+                </div>
+                <div class="oj-flex">            
+                    <div class="oj-flex-item">                
+                        <span data-bind="text: 'Telephone Number: ' + telephone"> </span>
+                    </div>
+                    <div class="oj-flex-item">                
+                        <span data-bind="text: 'Email: ' + email"> </span>
+                    </div>
+                    <div class="oj-flex-item">                
+                        <span data-bind="text: 'Facebook page: ' + facebookPage"> </span>
+                    </div>
+                    <div class="oj-flex-item">                
+                        <span data-bind="text: 'Service: ' + service"> </span>
+                    </div>
+                </div> 
+            </div> 
+            <div class="oj-flex-item">
+                <button data-bind="attr: { id: 'add-comment-' + contactID },
+                      click: $parent.addComment,
+                      ojComponent: {
+                            component:'ojButton',
+                            label: 'Add Comment'}">
+                </button>
+            </div>
+            <div class="oj-flex-item">
+                <button data-bind="attr: { id: 'view-comments-' + contactID },
                       click: $parent.viewComments,
                       ojComponent: {
                             component:'ojButton',
                             label: 'View  Comments'}">
-            </button>
-        </div>            
-    </div>
-  </li>
+                </button>
+            </div>
+
+        </div>
+    </li>
 </script>

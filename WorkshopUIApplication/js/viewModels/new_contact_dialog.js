@@ -18,7 +18,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojinputtext', 'ojs/ojdialog'
             name: '',
             telephone: '',
             email: '',
-            facebookPage: ''
+            facebookPage: '',
+            service: '',
+            score: 5,
         };
         self.submitContact = function (data, event, parentVM) {
             console.log(data);
