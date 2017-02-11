@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": ";;;;;;;;;AAUA,OAAO;EACH,WAAW,EAFP,IAAI;;AAIZ,0CAA2C;EACvC,gBAAgB,EAAE,8CAA8C",
+"mappings": "AAAA;;;;EAIE;AACF;;;EAGE;AAEF,OAAO;EACH,WAAW,EAFP,IAAI;;AAIZ,0CAA2C;EACvC,gBAAgB,EAAE,8CAA8C",
 "sources": ["../scss/workshop.scss"],
 "names": [],
 "file": "workshop.css"
