@@ -15,7 +15,20 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojdialog', '
         
     function add_commentContentViewModel() {
         var self = this;
-
+        var url = 'http://slc12mev.us.oracle.com:7003/MDCTipServicesHackaton/webresources/lookComments';
+        
+        var model = oj.Model.extend({
+        idAttribute: 'commentID',
+        urlRoot: url
+        });
+        
+        self.collection = new oj.Collection(null, {
+            url: url,
+            model: model
+        });        
+        self.dataSource = new oj.CollectionTableDataSource(self.collection);
+        
+        
         self.commentRecord = {
             comment: '',
             min: 0,
@@ -26,7 +39,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojinputtext', 'ojs/ojdialog', '
         self.submitComment = function (data, event, parentVM) {
             console.log(data);
             console.log(event);
-            parentVM.collection.create(data.commentRecord, {wait:true,
+            console.log(url)
+            self.collection.create(data.commentRecord, {wait:true,
         contentType: 'application/json',
         success: function (model, response) {
             $('#add-comment-dialog').ojDialog('close');
