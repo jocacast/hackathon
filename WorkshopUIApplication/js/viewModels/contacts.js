@@ -1,17 +1,12 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * contacts module
  */
 
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview',
+
+define(['ojs/ojcore', 'knockout', 'jquery', './view_comments', 'ojs/ojlistview',
   'ojs/ojcollectiontabledatasource', 'ojs/ojmodel', 'ojs/ojknockout',
   'ojs/ojinputtext', 'ojs/ojjsontreedatasource', 'ojs/ojbutton'
-], function (oj, ko, $) {
+], function (oj, ko, $, viewCommentsVM) {
   /**
    * The view model for the main content view template
    */
@@ -38,7 +33,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview',
       return returnResponse;
     };
 
-
     var url = 'http://slc12mev.us.oracle.com:7003/MDCTipServicesHackaton/webresources/wscontacts';
     var model = oj.Model.extend({
       idAttribute: 'contactID',
@@ -59,6 +53,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojlistview',
     self.viewComments = function (data, event) {
       console.log(data);
       console.log(event);
+      viewCommentsVM.collection.refresh();
       $('#view-comments-dialog').ojDialog('open');
     };
 
