@@ -7,8 +7,8 @@
 /**
  * contacts module
  */
-define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledatasource', 'ojs/ojmodel'
-], function (oj, ko) {
+define(['ojs/ojcore', 'knockout', './view_comments', 'ojs/ojlistview', 'ojs/ojcollectiontabledatasource', 'ojs/ojmodel'
+], function (oj, ko, viewCommentsVM) {
     /**
      * The view model for the main content view template
      */
@@ -55,6 +55,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledataso
         self.viewComments = function(data, event) {
             console.log(data);
             console.log(event);
+            viewCommentsVM.collection.refresh();
             $('#view-comments-dialog').ojDialog('open');
         };
         

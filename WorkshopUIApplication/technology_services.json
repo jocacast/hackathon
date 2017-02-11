@@ -1,0 +1,44 @@
+[
+    {
+        "contactID": 1,
+        "serviceId": 1,
+        "name": "Dr. Laptop",
+        "telephone": 442080700,
+        "email": "admin@lap_doc.com",
+        "facebookPage": "www.facebook.com/lap_doc",
+        "score": 8 ,
+        "service": "Laptop and computer reparation"
+    },
+    {
+        "contactID": 2,
+        "serviceId": 2,
+        "name": "Dr. Mario",
+        "telephone": 442923795,
+        "email": "contact@mario_dr.com",
+        "facebookPage": "www.facebook.com/dr_mario",
+        "score": 10,
+        "service": "Video Game Console reparation"
+        
+    },
+    {
+        "contactID": 3,
+        "serviceId": 3,
+        "name": "Smart Repair",
+        "telephone": 4421189937,
+        "email": "smart_repair@gmail.com",
+        "facebookPage": "www.facebook.com/smart_repair",
+        "score": 8,
+        "service": "Cell phone reparation"
+    },
+    
+    {
+        "contactID": 4,
+        "serviceId": 4,
+        "name": " Mr. Wash",
+        "telephone": 4429189932,
+        "email": "contact@mr_wash.com",
+        "facebookPage": "www.facebook.com/mr_wash",
+        "score": 8,
+        "service": "Washing machine reparation"
+    }
+]

@@ -36,7 +36,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledataso
         };
         
         
-        var url = 'food_services.json';
+        var url = 'technology_services.json';
         var model = oj.Model.extend({
             idAttribute: 'contactID',
             urlRoot: url,

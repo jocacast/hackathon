@@ -26,11 +26,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojlistview', 'ojs/ojcollectiontabledataso
         });
 
         self.dataSource = new oj.CollectionTableDataSource(self.collection);
-
-
+        
+        self.initialize = function(params){
+            self.collection.refresh();
+        }
 
 
     }
 
-    return view_commentsContentViewModel;
+    return new view_commentsContentViewModel;
 });
